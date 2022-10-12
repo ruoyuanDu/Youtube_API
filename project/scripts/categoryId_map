@@ -1,0 +1,25 @@
+categoryId_map = {
+    'Film & Animation': 1,
+    'Autos & Vehicles': 2,
+    'Music': 10,
+    'Science & Technology': 28,
+    'Entertainment': 24,
+    'People & Blogs': 22,
+    'Education': 27,
+    'Gaming': 20,
+    'Travel & Events': 19,
+    'Comedy': 23,
+    'Howto & Style':26,
+    'Sports': 17,
+    'News & Politics': 25,
+    'Pets & Animals': 15,
+    'Movies': 30   
+}
+
+temp_list = []
+for i in df_merge['categoryId']:
+    for key in categoryId_map.keys():
+         if str(categoryId_map[key])==i:
+                temp_list.append(key)
+
+df_merge.loc[:, 'category'] = temp_list
